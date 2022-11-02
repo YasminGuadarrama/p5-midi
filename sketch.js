@@ -37,7 +37,6 @@ function triggerNote(note, midi = true) {
         note.number +
         "."
     );
-}
 
 function stopNote(note) {
     //stop note
