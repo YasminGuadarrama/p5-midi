@@ -15,7 +15,7 @@ function triggerNote(note, midi = true) {
     }
     //you can add your own functionality here.
     //Declare object to fill with spheres
-    for(int i = 0; i <= notes.size; i++){
+    for(let i = 0; i <= notes.size; i++){
          text(notes[0], 40+i, 40+i);
         fill(colors.start_clr);
         ellipse(20+i, 30+i, 40+i);
@@ -37,7 +37,7 @@ function triggerNote(note, midi = true) {
         note.number +
         "."
     );
-
+}
 function stopNote(note) {
     //stop note
     synth.triggerRelease(note.name + note.octave);
@@ -82,7 +82,7 @@ function keyReleased() {
 
 function setup() {
     noLoop();
-    background(bg.colors);
+    background(colors.bg);
     document.addEventListener('click', function(){
       document.getElementById('txt').innerText = "";
 
