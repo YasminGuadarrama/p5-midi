@@ -16,7 +16,7 @@ function triggerNote(note, midi = true) {
     //you can add your own functionality here.
     //Declare object to fill with spheres
     for(int i = 0; i <= notes.size; i++){
-        text(notes[0]);
+         text(notes[0], 40+i, 40+i);
         fill(colors.start_clr);
         ellipse(20+i, 30+i, 40+i);
         fill(colors.end_clr);
@@ -25,16 +25,8 @@ function triggerNote(note, midi = true) {
 
     //displays note name in browser (you can remove this line)
     document.getElementById('txt').innerText = note.name + note.octave;
-    //synth.triggerAttack(note.name + note.octave);
-
-    //play note using appropriate function given input type
-    if (midi) { //midi keyboard input
-        try {
-            playNote(note.name + note.octave);
-        } catch { }
-    } else { //regular keyboard input
-        synth.triggerAttack(note.name + note.octave);
-    }
+    synth.triggerAttack(note.name + note.octave);
+  
 
     //Show what we are receiving
     console.log(
